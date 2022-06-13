@@ -1,0 +1,32 @@
+.header{
+    border-bottom: 1px solid hsla(0, 0%, 52%, 0.418);
+    display: flex;
+    align-items: center;
+    padding: 2rem 0.5rem;
+    background-color: hsl(0, 0%, 100%);
+}
+
+.header__title{
+    font-size: 1.2rem;
+}
+
+.switch-mode{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.light-mode, .dark-mode{
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+
+.dark-mode {
+    display: none;
+}
+
+.mode__title{
+    font-size: 1rem;
+    font-weight: 500;
+}
