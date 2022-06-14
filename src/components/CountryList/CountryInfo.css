@@ -1,0 +1,52 @@
+.country__article{
+    max-width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.country_image_box{
+    max-width: 350px;
+    overflow: hidden;
+}
+
+
+.country__image{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.country__sub_article{
+    /* padding: 0 2rem 2rem 1rem; */
+    padding: 0.5rem 1.5rem 2rem 1.5rem;
+    border: 1px solid hsl(0, 0%, 52%);
+    background-color: #ffffff;
+    overflow: hidden;
+    border-radius: 0 0 10px 10px;
+}
+
+
+.country__heading {
+    /* padding: 1.3rem 0; */
+    padding: 1rem 0;
+    font-size: 1.3rem;
+}
+
+
+.country__population, .country__region, .country__capital{
+    display: flex;
+    align-items: center;
+    /* padding: 0 1rem; */
+    font-size: 15px;
+    margin-bottom: 0.5rem;
+}
+
+
+.country_population__header, .country_region__header, .country_capital__header {
+    font-size: 15px;
+    font-weight:  500;
+}
+
+.country_population__headcount, .country_region__name, .country_capital__name {
+    margin-left: 5px;
+}
