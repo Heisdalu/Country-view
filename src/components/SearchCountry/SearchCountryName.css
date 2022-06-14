@@ -1,0 +1,33 @@
+.searchCountryName {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    border:1px solid hsla(0, 0%, 52%, 0.418);
+    overflow: hidden;
+    background-color: hsl(0, 0%, 100%);
+    padding: 1rem 0;
+
+}
+
+.search__country__name {
+  display: none;
+}
+
+.search__logo {
+  margin-inline: 1.2rem;
+}
+
+.search__logo svg {
+  height: 25px;
+  width: 25px;
+  fill: red;
+}
+
+
+.search__input{
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+
+}
