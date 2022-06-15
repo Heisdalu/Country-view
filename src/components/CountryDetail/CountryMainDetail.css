@@ -1,0 +1,36 @@
+.country_main_detail{
+    margin-bottom: 2rem;
+}
+
+.country_main_box{
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.country_detail_type{
+    font-size: 1.1rem;
+    color: var(--light-mode-text);
+    font-weight: 500;
+}
+
+.country_main_box span{
+    display: block;
+    margin-top: 2px;
+    font-size: 1rem;
+    margin-left: 5px;
+    color: var(--light-mode-input);
+}
+
+
+@media screen and (min-width:1000px) {
+    .country_main_box{
+        margin: 0.5rem 0;
+    }
+    .country_detail_type{
+        font-size: 1rem;
+    }
+    .country_main_detail{
+        margin-bottom: 0;
+    }
+}
