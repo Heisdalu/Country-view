@@ -1,0 +1,19 @@
+.country_other_box {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+
+.country_other_box span {
+    margin-left: 5px;
+    color: var(--light-mode-input);
+}
+
+
+@media screen and (min-width:1000px) {
+    .country_other_box {
+        margin: 0.5rem 0;
+    }
+}
