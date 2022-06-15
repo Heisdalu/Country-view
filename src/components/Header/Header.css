@@ -30,3 +30,10 @@
     font-size: 1rem;
     font-weight: 500;
 }
+
+
+@media screen and (min-width:1024px) {
+    .header{
+        padding: 2rem;
+    }
+}

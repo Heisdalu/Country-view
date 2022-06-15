@@ -1,12 +1,15 @@
 .searchCountryName {
-    display: flex;
-    align-items: center;
-    border-radius: 10px;
-    border:1px solid hsla(0, 0%, 52%, 0.418);
-    overflow: hidden;
-    background-color: hsl(0, 0%, 100%);
-    padding: 1rem 0;
-
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid hsla(0, 0%, 52%, 0.418);
+  overflow: hidden;
+  background-color: hsl(0, 0%, 100%);
+  /* padding: 1rem 0; */
+  max-width: 450px;
+  border: none;
+  box-shadow:  var(--light-mode-box);
+  height: 60px;
 }
 
 .search__country__name {
@@ -20,14 +23,20 @@
 .search__logo svg {
   height: 25px;
   width: 25px;
-  fill: red;
+  fill: var(--light-mode-input);
 }
 
+.search__input {
+  width: 100%;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  padding-right: 1rem;
+  color: var(--light-mode-text);
+}
 
-.search__input{
-    width: 100%;
-    font-size: 1rem;
-    border: none;
-    outline: none;
-
+@media screen and (min-width: 1024px) {
+  .searchCountryName {
+    width: 450px;
+  }
 }

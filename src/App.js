@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react'
 import Header from "./components/Header/Header";
 import SearchCountry from "./components/SearchCountry/SearchCountry";
 import CountryList from "./components/CountryList/CountryList";
+import CountryDetail from './components/CountryDetail/CountryDetail';
+import './App.css'
 
 const App = () => {
   const [data, seData] = useState('')
@@ -16,10 +18,11 @@ const App = () => {
     getData()
   },[])
   
-  return <div class="Country_container">
+  return <div class="country_container">
       <Header />
-      <SearchCountry />
-      <CountryList data={data} />
+      {/* <SearchCountry /> */}
+      {/* <CountryList data={data} /> */}
+      <CountryDetail />
   </div>;
 };
 

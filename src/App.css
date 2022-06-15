@@ -1,0 +1,4 @@
+.country_container {
+    height: 100vh;
+  background-color: var(--light-mode-background);
+}

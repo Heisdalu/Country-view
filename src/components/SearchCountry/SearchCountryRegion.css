@@ -1,39 +1,41 @@
 .filter__region {
-    margin-top: 2.5rem;
-    max-width: 250px;
-    color: hsl(200, 15%, 8%);
-    font-weight: 500;
+  margin-top: 2rem;
+  max-width: 210px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  box-shadow: var(--light-mode-box);
+  border-radius: 5px;
 }
 
-.filter_region_heading_box {
-    display: flex;
-    border: 1px solid;
-    padding: 1rem;
-    align-items: center;
-    border-radius: 10px;
+.filter__region::after {
+  content: var(--down-arrow);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
 }
 
-.filter__region__title {
-    font-size: 1rem;
-}
-
-.arrow_down {
-  margin-left: auto;
-}
-.arrow_down svg {
-  height: 10px;
-  width: 10px;
-  fill: black;
-}
-
-.filter__region__list {
-  list-style: none;
-  margin-top: 5px;
-  border: 1px solid;
+select {
+  color: var(--light-mode-text);
+  height: 60px;
+  font-size: 1rem;
+  padding-left: 1rem;
+  width: 100%;
+  appearance: none;
   border-radius: 10px;
-  padding-block: 1rem;
+  outline: none;
+  border: none;
 }
 
-.region {
-  padding: 0.5rem 1rem;
+option {
+  padding: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .filter__region {
+    margin-top: 0;
+    margin-left: auto;
+    width: 200px;
+  }
 }

@@ -19,7 +19,7 @@ const SearchCountryName = () => {
         </svg>
       </span>
       <input
-        type="text"
+        type="search"
         id="input-country"
         class="search__input"
         placeholder="Search for a country..."
