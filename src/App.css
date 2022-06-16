@@ -1,3 +1,8 @@
-.dark_mode{
-  --light-mode-background: #ff0000;
+.dark_mode {
+  --header-background: hsl(209, 23%, 22%);
+  --header-text: #ffffff;
+  --box-shadow1-color: 0px 0px 5px 0px rgba(0, 0, 0, 0.456);
+  --main-background: hsl(207, 26%, 17%);
+  --search-text: hsl(0, 0%, 90%);
+  --detail-text: #ffffffd1; 
 }

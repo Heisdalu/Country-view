@@ -5,15 +5,14 @@
   font-size: 1.1rem;
 }
 
-
 .country_other_box span {
-    margin-left: 5px;
-    color: var(--light-mode-input);
+  margin-left: 5px;
+  color: var(--detail-text);
+  transition: color 1s;
 }
 
-
-@media screen and (min-width:1000px) {
-    .country_other_box {
-        margin: 0.5rem 0;
-    }
+@media screen and (min-width: 1000px) {
+  .country_other_box {
+    margin: 0.5rem 0;
+  }
 }

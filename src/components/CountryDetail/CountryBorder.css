@@ -1,8 +1,9 @@
 .country_border_countries h2 {
   padding: 1rem 0 0.5rem 0;
-  color: var(--light-mode-text);
   font-weight: 500;
   font-size: 1rem;
+  color: var(--header-text);
+  transition: all 1s;
 }
 
 .country_border_box {
@@ -12,10 +13,11 @@
 .country_border_countries span {
   margin: 0.5rem 1rem 0.5rem 0;
   padding: 0.6rem;
-  background-color: var(--dark--mode-text);
   border-radius: 5px;
-  box-shadow: var(--light-mode-box);
-  color: var(--light-mode-input);
+  background-color: var(--header-background);
+  color: var(--header-text);
+  box-shadow: var(--box-shadow1-color);
+  transition: all 1s;
 }
 
 @media screen and (min-width: 1000px) {
@@ -38,6 +40,6 @@
   }
 
   .country_border_countries {
-       margin-top: 0.5rem;
+    margin-top: 0.5rem;
   }
 }

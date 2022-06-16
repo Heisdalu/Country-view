@@ -8,16 +8,16 @@
   border-radius: 5px;
 }
 
-.filter__region::after {
-  content: var(--down-arrow);
+.down_arrow{
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: 20px;
+  right: 1rem;
+  fill: var(--header-text);
+  transition: fill 1s;
 }
 
 select {
-  color: var(--light-mode-text);
   height: 60px;
   font-size: 1rem;
   padding-left: 1rem;
@@ -26,6 +26,10 @@ select {
   border-radius: 10px;
   outline: none;
   border: none;
+  background-color: var(--header-background);
+  color: var(--search-text);
+  box-shadow: var(--box-shadow1-color);
+  transition: all 1s;
 }
 
 option {

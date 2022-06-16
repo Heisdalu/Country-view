@@ -16,9 +16,10 @@
   justify-content: center;
   align-items: center;
   font-size: 1rem;
-  color: var(--light-mode-text);
-  background-color: var(--lg--container-bg);
-  box-shadow: var(--light-mode-box);
+  background-color: var(--header-background);
+  color: var(--header-text);
+  box-shadow: var(--box-shadow1-color);
+  transition: all 1s;
 }
 
 .left-arrow {
@@ -30,7 +31,8 @@
 
 .left-arrow svg{
     width: 30px;
-    fill: var(--dark-none-background);
+    fill: var(--header-text);
+    transition: all 1s;
 }
 
 .country_detail_pic_box{
@@ -44,7 +46,9 @@
 
 .country_detail_header{
     font-size: 1.5rem;
-    margin: 2rem 1rem;
+    margin: 2rem 0rem;
+    color: var(--header-text);
+    transition: all 1s;
 }
 
 .country_detail_box{

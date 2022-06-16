@@ -17,12 +17,14 @@ const App = () => {
   // useEffect(() => {
   // },[])
   
-  return <div class="country_container">
+  return (
+    <div class="country_container">
       <Header />
-      {/* <SearchCountry /> */}
-      {/* <CountryList data={data} /> */}
+      <SearchCountry />
+      <CountryList data={data} />
       <CountryDetail />
-  </div>;
+    </div>
+  );
 };
 
 export default App;

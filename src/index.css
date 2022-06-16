@@ -5,21 +5,21 @@
 }
 
 :root {
-  --down-arrow: url("./assets/down-arrow-svgrepo-com.svg");
-  --dark-none-background: hsl(209, 23%, 22%);
-  --dark-mode-background: hsl(207, 26%, 17%);
-  --light-mode-text: hsl(200, 15%, 8%);
-  --light-mode-input: hsl(0, 0%, 52%);
-  --light-mode-background: hsl(0, 0%, 98%);
-  --dark--mode-text: #ffffff;
-  --lg--container-bg: #ffffff;
-  --light-mode-box: 0px 0px 12px 0px hsla(208, 23%, 22%, 0.181);
+  --main-background: hsl(0, 0%, 98%);
+  --header-background: #ffffff;
+  --header-text: hsl(200, 15%, 8%);
+  --box-shadow1-color: 0px 0px 12px 0px hsla(208, 23%, 22%, 0.181);
+  --search-text: hsl(0, 0%, 52%);
+  --info-text: hsl(0, 0%, 52%);
+  --detail-text: hsl(0, 0%, 52%);
 }
+
 
 
 body {
   margin: 0;
-  background-color: var(--light-mode-background);
+  background-color: var(--main-background);
+  transition: background-color 1s;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
