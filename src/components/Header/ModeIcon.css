@@ -1,7 +1,7 @@
 .light-mode {
   height: 20px;
   width: 20px;
-  margin-right: 10px;
+  margin-right: 5px;
   fill: var(--header-text);
   transition: fill 1s;
 }

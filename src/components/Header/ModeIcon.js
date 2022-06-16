@@ -4,7 +4,7 @@ const ModeIcon = () => {
   return (
     <svg
       viewBox="0 0 512 512"
-      enable-background="new 0 0 512 512"
+      enableBackground="new 0 0 512 512"
       width="375"
       height="156"
       fill=""

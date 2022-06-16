@@ -8,13 +8,13 @@ const Header = () => {
     bodyElem.classList.toggle("dark_mode");
   };
   return (
-    <header class="header">
-      <h1 class="header__title">Where in the world?</h1>
+    <header className="header">
+      <h1 className="header__title">Where in the world?</h1>
 
-      <nav class="switch-mode" onClick={switchModeHandler}>
+      <nav className="switch-mode" onClick={switchModeHandler}>
         <ModeIcon />
 
-        <h2 class="mode__title">Dark Mode</h2>
+        <h2 className="mode__title">Dark Mode</h2>
       </nav>
     </header>
   );

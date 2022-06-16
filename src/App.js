@@ -3,6 +3,7 @@ import Header from "./components/Header/Header";
 import SearchCountry from "./components/SearchCountry/SearchCountry";
 import CountryList from "./components/CountryList/CountryList";
 import CountryDetail from './components/CountryDetail/CountryDetail';
+import Error from './components/Error/Error';
 import './App.css'
 
 const App = () => {
@@ -18,11 +19,12 @@ const App = () => {
   // },[])
   
   return (
-    <div class="country_container">
+    <div className="country_container">
       <Header />
-      <SearchCountry />
-      <CountryList data={data} />
-      <CountryDetail />
+      {/* <SearchCountry /> */}
+      {/* <CountryList data={data} /> */}
+      {/* <CountryDetail /> */}
+      <Error />
     </div>
   );
 };
