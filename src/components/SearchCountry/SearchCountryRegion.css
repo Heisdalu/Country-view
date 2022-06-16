@@ -27,9 +27,9 @@ select {
   outline: none;
   border: none;
   background-color: var(--header-background);
-  color: var(--search-text);
   box-shadow: var(--box-shadow1-color);
   transition: all 1s;
+  color: var(--header-text);
 }
 
 option {

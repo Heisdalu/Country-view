@@ -3,11 +3,11 @@ import "./SearchCountryName.css";
 
 const SearchCountryName = () => {
   return (
-    <section class="searchCountryName">
-      <label htmlFor="input-country" class="search__country__name">
+    <section className="searchCountryName">
+      <label htmlFor="input-country" className="search__country__name">
         Search Country
       </label>
-      <span class="search__logo">
+      <span className="search__logo">
         <svg
           fill="#000000"
           xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +21,7 @@ const SearchCountryName = () => {
       <input
         type="search"
         id="input-country"
-        class="search__input"
+        className="search__input"
         placeholder="Search for a country..."
       />
     </section>

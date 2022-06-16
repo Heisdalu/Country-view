@@ -14,27 +14,27 @@ width="12px" height="12px"
 
 const SearchCountryRegion = () => {
   return (
-    <section class="filter__region">
+    <section className="filter__region">
       <span>
        {downIcon()}
       </span>
       <select>
-        <option class="region" value="Filter By Region">
+        <option className="region" value="Filter By Region">
           Filter by Region
         </option>
-        <option class="region" value="Africa">
+        <option className="region" value="Africa">
           Africa
         </option>
-        <option class="region" value="America">
+        <option className="region" value="America">
           America
         </option>
-        <option class="region" value="Asia">
+        <option className="region" value="Asia">
           Asia
         </option>
-        <option class="region" value="Europe">
+        <option className="region" value="Europe">
           Europe
         </option>
-        <option class="region" value="Oceania">
+        <option className="region" value="Oceania">
           Oceania
         </option>
       </select>

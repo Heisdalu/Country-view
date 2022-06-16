@@ -5,7 +5,7 @@ import "./SearchCountry.css";
 
 const SearchCountry = () => {
   return (
-    <section class="search__country">
+    <section className="search__country">
       <SearchCountryName />
       <SearchCountryRegion />
   

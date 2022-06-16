@@ -35,6 +35,7 @@
   background-color: var(--header-background);
   transition: all 1s;
   color: var(--search-text);
+  color: var(--header-text);
 }
 
 .search__input::placeholder{
