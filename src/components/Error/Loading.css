@@ -1,0 +1,13 @@
+.loading_gif{
+    margin-top: 2rem;
+    display: flex;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading_gif svg {
+   height: 200px;
+   width: 150px;
+
+}
