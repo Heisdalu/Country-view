@@ -1,7 +1,5 @@
 import React from "react";
 
-const DataContext = React.createContext({
-  countryData: [],
-});
+const DataContext = React.createContext([]);
 
 export default DataContext;
