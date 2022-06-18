@@ -8,6 +8,15 @@
   background-color: var(--primary-color);
 }
 
+.intersect > span{
+  height: 0;
+}
+
+.intersect svg {
+  height: 100px;
+  width: 100px;
+}
+
 @media screen and (min-width: 768px) {
   .country__list {
     grid-template-columns: 1fr 1fr;

@@ -11,6 +11,7 @@ const CountryInfo = (props) => {
         <img
           src={countryData?.flags?.png}
           className="country__image"
+          loading="lazy"
           alt={`${countryData?.name?.common} flag`}
         />
       </figure>

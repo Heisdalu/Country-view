@@ -35,6 +35,7 @@
   color: red;
   color: var(--header-text);
   transition: all 1s;
+  max-width: 200px;
 }
 
 .country__population,

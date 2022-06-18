@@ -4,7 +4,6 @@ import ModeIcon from "./ModeIcon";
 const Header = () => {
   const switchModeHandler = () => {
     const bodyElem = document.body;
-    console.log(bodyElem.classList);
     bodyElem.classList.toggle("dark_mode");
   };
   return (
