@@ -1,13 +1,46 @@
-
+import { useContext, useEffect, useState } from "react";
+import DataContext from "../../context/data-context";
 import "./SearchCountryName.css";
 
 const SearchCountryName = () => {
+  const dataCtx = useContext(DataContext);
+  const [inputVal, setInputVal] = useState("");
+  // let timeout;
+  const InputHandler = (e) => {
+    setInputVal(e.target.value);
+    // clearTimeout(timeout)
+    // timeout = setTimeout(() => {
+    //   console.log(e.target);
+    // },1000)
+    // dataCtx.setError(true)
+  };
+
+  useEffect(() => {
+    // console.log(inputVal);
+    const countryName = inputVal.trim();
+    let timer;
+    if (countryName) {
+      timer = setTimeout(() => {
+        console.log(inputVal, dataCtx);
+        const filterCountry = dataCtx.data.filter((el) =>
+          el.name.common
+            .toLocaleLowerCase()
+            .startsWith(countryName.toLocaleLowerCase())
+        );
+        console.log(filterCountry);
+        
+      }, 1000);
+    }
+
+    return () => clearTimeout(timer);
+  }, [inputVal]);
+
   return (
     <section className="searchCountryName">
       <label htmlFor="input-country" className="search__country__name">
         Search Country
       </label>
-      <span className="search__logo">
+      <span className="search__logo" aria-hidden="true">
         <svg
           fill="#000000"
           xmlns="http://www.w3.org/2000/svg"
@@ -23,6 +56,8 @@ const SearchCountryName = () => {
         id="input-country"
         className="search__input"
         placeholder="Search for a country..."
+        onChange={InputHandler}
+        value={inputVal}
       />
     </section>
   );

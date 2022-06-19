@@ -16,7 +16,7 @@ const initialState = {
   mainData: [],
   isintersectLoading: false,
 };
-
+//infinite scroll
 const dataReducer = (state, action) => {
   // when to remove the loading_gif and stop loading baecuse it has reached the end of the array.
   const stopCount =
@@ -45,11 +45,11 @@ const dataReducer = (state, action) => {
 };
 
 const CountryList = (props) => {
-  let data = useContext(DataContext);
+  let dataCtx = useContext(DataContext);
   const elemRef = useRef();
 
   const mainData = useMemo(() => {
-    const result = data.sort((a, b) => {
+    const result = dataCtx.data.sort((a, b) => {
       const first_Elem = a.name.common.toUpperCase();
       const second_Elem = b.name.common.toUpperCase();
       if (first_Elem < second_Elem) return -1;
@@ -58,7 +58,7 @@ const CountryList = (props) => {
     });
 
     return result;
-  }, [data]);
+  }, [dataCtx]);
 
   initialState.generalData = mainData;
   initialState.mainData = mainData.slice(0, 20);
