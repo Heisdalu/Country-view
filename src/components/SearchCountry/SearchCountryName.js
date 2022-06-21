@@ -5,33 +5,42 @@ import "./SearchCountryName.css";
 const SearchCountryName = () => {
   const dataCtx = useContext(DataContext);
   const [inputVal, setInputVal] = useState("");
-  // let timeout;
+
   const InputHandler = (e) => {
     setInputVal(e.target.value);
-    // clearTimeout(timeout)
-    // timeout = setTimeout(() => {
-    //   console.log(e.target);
-    // },1000)
-    // dataCtx.setError(true)
   };
 
   useEffect(() => {
     // console.log(inputVal);
     const countryName = inputVal.trim();
     let timer;
+    console.log(countryName);
     if (countryName) {
       timer = setTimeout(() => {
-        console.log(inputVal, dataCtx);
-        const filterCountry = dataCtx.data.filter((el) =>
+        const filterCountry = dataCtx.generalData.filter((el) =>
           el.name.common
             .toLocaleLowerCase()
             .startsWith(countryName.toLocaleLowerCase())
         );
-        console.log(filterCountry);
-        
+        dataCtx.setFunc({
+          type: "DATA_IS_PRESENT",
+          data: filterCountry,
+          generalData: dataCtx.generalData,
+          isSearchActive: true,
+        });
       }, 1000);
     }
 
+    if (countryName === "" && dataCtx.isSearchActive) {
+      console.log("active");
+      console.log(dataCtx);
+      dataCtx.setFunc({
+        type: "DATA_IS_PRESENT",
+        generalData: dataCtx.generalData,
+        data: dataCtx.generalData,
+        isSearchActive: false,
+      });
+    }
     return () => clearTimeout(timer);
   }, [inputVal]);
 

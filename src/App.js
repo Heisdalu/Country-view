@@ -8,26 +8,29 @@ import Error from "./components/Error/Error";
 import "./App.css";
 
 const intialStateObj = {
+  generalData: [],
   data: [],
   error: false,
-  setFunc: () => {}
+  isSearchedCountryActive: false,
+  setFunc: () => {},
 };
 const objReducer = (state, action) => {
   if (action.type === "ERROR") {
-     return {
-       data: state.data,
-       error: true,
-       searchedCountryPresent: false,
-       setError: () => {},
-     };
-    
+    return {
+      generalData: [],
+      data: state.data,
+      error: true,
+      isSearchActive: false,
+      setFunc: () => {},
+    };
   }
 
   if (action.type === "DATA_IS_PRESENT") {
-    console.log(action);
     return {
+      generalData: action.generalData,
       data: action.data,
       error: false,
+      isSearchActive: action.isSearchActive,
       setFunc: () => {},
     };
   }
@@ -55,28 +58,38 @@ const App = () => {
 
       const response = await result.json();
       setIsLoading(false);
-      dispatchObjAction({ type: "DATA_IS_PRESENT", data: response });
+      dispatchObjAction({
+        type: "DATA_IS_PRESENT",
+        data: response,
+        generalData: response,
+        isSearchActive: false,
+      });
     } catch (err) {
       setIsLoading(false);
       dispatchObjAction({ type: "ERROR" });
     }
   }, []);
 
-
-  const searchHandler = (actionType) => {
-    dispatchObjAction({ type: actionType});
-  }
+  const searchHandler = (obj) => {
+    dispatchObjAction({
+      type: obj.type,
+      data: obj.data,
+      generalData: obj.generalData,
+      isSearchActive: obj.isSearchActive,
+    });
+  };
 
   const dataObj = {
+    generalData: dataStateObj.generalData,
     data: dataStateObj.data,
     error: dataStateObj.error,
-    setFunc: searchHandler
-  }
+    isSearchActive: dataStateObj.isSearchActive,
+    setFunc: searchHandler,
+  };
 
-  console.log(dataObj);
   useEffect(() => {
     getData();
-  }, [getData]);
+  }, []);
 
   return (
     <DataContext.Provider value={dataObj}>
