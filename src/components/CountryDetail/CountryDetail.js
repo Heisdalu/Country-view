@@ -39,9 +39,20 @@ const CountryDetail = () => {
   const dataCtx = useContext(DataContext);
   const countryDetail = dataCtx.showCountryObjInfo;
 
+  const goBackHandler = () => {
+    dataCtx.setFunc({
+      type: "DATA_IS_PRESENT",
+      data: dataCtx.generalData,
+      generalData: dataCtx.generalData,
+      isSearchActive: false,
+      showCountryInfo: false,
+      showCountryObjInfo: []
+    });
+  };
+
   return (
     <section className="country__detail">
-      <button className="back_btn">
+      <button className="back_btn" onClick={goBackHandler}>
         <ArrowLeft />
         Back
       </button>
@@ -55,7 +66,10 @@ const CountryDetail = () => {
           <h1 className="country_detail_header">{countryDetail.name.common}</h1>
           <CountryMainDetail countryDetail={countryDetail} />
           <CountryOtherDetail countryDetail={countryDetail} />
-          <CountryBorder countryBorderDetail={countryDetail.borders} generalData={dataCtx.generalData}/>
+          <CountryBorder
+            countryBorderDetail={countryDetail.borders}
+            generalData={dataCtx.generalData}
+          />
         </section>
       </div>
     </section>
