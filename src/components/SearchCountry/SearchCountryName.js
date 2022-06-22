@@ -11,10 +11,8 @@ const SearchCountryName = () => {
   };
 
   useEffect(() => {
-    // console.log(inputVal);
     const countryName = inputVal.trim();
     let timer;
-    console.log(countryName);
     if (countryName) {
       timer = setTimeout(() => {
         const filterCountry = dataCtx.generalData.filter((el) =>
@@ -32,8 +30,6 @@ const SearchCountryName = () => {
     }
 
     if (countryName === "" && dataCtx.isSearchActive) {
-      console.log("active");
-      console.log(dataCtx);
       dataCtx.setFunc({
         type: "DATA_IS_PRESENT",
         generalData: dataCtx.generalData,
@@ -42,6 +38,7 @@ const SearchCountryName = () => {
       });
     }
     return () => clearTimeout(timer);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inputVal]);
 
   return (
@@ -62,6 +59,7 @@ const SearchCountryName = () => {
       </span>
       <input
         type="search"
+        autoComplete="off"
         id="input-country"
         className="search__input"
         placeholder="Search for a country..."

@@ -16,7 +16,7 @@ const initialState = {
   presentCount: 20,
   mainData: [],
   isintersectLoading: false,
-  error: false
+  error: false,
 };
 //infinite scroll
 const dataReducer = (state, action) => {
@@ -24,46 +24,41 @@ const dataReducer = (state, action) => {
   const stopCount =
     state.presentCount + action.presentLimit > state.generalData.length - 1;
 
-  console.log(stopCount);
-
   if (action.type === "ADD_CONTENT" && !stopCount) {
-    console.log(action);
     const count = state.presentCount + action.presentLimit;
     state.presentCount = count;
-    // const searchActive = action.isSearchActive ? 
 
     return {
       generalData: state.generalData,
       mainData: state.generalData.slice(0, state.presentCount),
       presentCount: state.presentCount,
       isintersectLoading: false,
-      error: false
+      error: false,
     };
   }
 
   if (action.type === "ADD_CONTENT" && stopCount) {
-    console.log(action);
     return {
       generalData: state.generalData,
       mainData: state.generalData,
       presentCount: state.presentCount,
       isintersectLoading: true,
-      error: false
+      error: false,
     };
   }
   if (action.type === "INITIAL_LOAD") {
-    const generalData = action.isSearchActive ? action.data : action.generalData;
-    const isintersectLoading = action.isSearchActive ? true : false;
-    const mainData = action.isSearchActive ? action.data : action.mainData;
-    
-    console.log(state, action);
-    
+    // const generalData = action.isSearchActive
+    //   ? action.data
+    //   : action.generalData;
+    const isintersectLoading = action.mainData.length === 0 ? true : false;
+    // const mainData = action.isSearchActive ? action.data : action.mainData;
+
     return {
-      generalData: generalData,
-      mainData: mainData,
+      generalData: action.data,
+      mainData: action.mainData,
       isintersectLoading: isintersectLoading,
       presentCount: 20,
-      error: false
+      error: false,
     };
   }
 
@@ -90,24 +85,21 @@ const CountryList = (props) => {
       mainData: result.slice(0, 20),
       presentCount: 20,
       isSearchActive: dataCtx.isSearchActive,
-      data: dataCtx.data
+      data: dataCtx.data,
     });
-    // console.log(result);
 
     return result;
   }, [dataCtx]);
 
-
   const objFunc = (entries) => {
     const [entry] = entries;
-    console.log(entries);
     if (entry.isIntersecting) {
       setTimeout(() => {
         dispatchDataAction({
           type: "ADD_CONTENT",
           presentLimit: 20,
           isSearchActive: dataCtx.isSearchActive,
-          data: dataCtx.data
+          data: dataCtx.data,
         });
       }, 1000);
     }
@@ -129,18 +121,22 @@ const CountryList = (props) => {
     if (!dataState.isintersectLoading) {
       elemObserve.observe(elemRef.current);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[dataState.isintersectLoading]);
 
   return (
     <>
-      <section className="country__list">{info}</section>
+      {!error && <section className="country__list">{info}</section>}
       {!dataState.isintersectLoading && (
         <span ref={elemRef} className="intersect">
           {<Loading />}
         </span>
       )}
-      {error && <Error />}
+      {error && (
+        <div className="countryList_error">
+          <Error />
+        </div>
+      )}
     </>
   );
 };
