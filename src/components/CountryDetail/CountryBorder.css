@@ -25,21 +25,19 @@
     grid-column: 1/-1;
     display: flex;
     align-items: center;
+    margin-top: 1.5rem;
+  }
+
+  .country_border_box{
+    margin-left: 1rem;
   }
 
   .country_border_countries span {
     margin: 0;
-    margin-left: 1rem;
-    padding: 5px 10px;
+    padding: 10px;
+    margin: 0 0.3rem 0.5rem 0
   }
-}
-
-@media screen and (min-width: 1000px) {
   .country_border_countries h2 {
     padding: 0;
-  }
-
-  .country_border_countries {
-    margin-top: 0.5rem;
   }
 }

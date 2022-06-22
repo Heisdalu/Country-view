@@ -4,6 +4,7 @@ import Loading from "./components/Error/Loading";
 import Header from "./components/Header/Header";
 import SearchCountry from "./components/SearchCountry/SearchCountry";
 import CountryList from "./components/CountryList/CountryList";
+import CountryDetail from "./components/CountryDetail/CountryDetail";
 import Error from "./components/Error/Error";
 import "./App.css";
 
@@ -12,6 +13,7 @@ const intialStateObj = {
   data: [],
   error: false,
   isSearchedCountryActive: false,
+  showCountryInfo: false,
   setFunc: () => {},
 };
 const objReducer = (state, action) => {
@@ -21,6 +23,7 @@ const objReducer = (state, action) => {
       data: state.data,
       error: true,
       isSearchActive: false,
+      showCountryInfo: false,
       setFunc: () => {},
     };
   }
@@ -32,6 +35,14 @@ const objReducer = (state, action) => {
       error: false,
       isSearchActive: action.isSearchActive,
       setFunc: () => {},
+      showCountryInfo: false,
+    };
+  }
+  if (action.type === "DISPLAY_COUNTRY_INFO") {
+    return {
+      ...state,
+      showCountryInfo: action.showCountryInfo,
+      showCountryObjInfo: action.showCountryObjInfo,
     };
   }
 
@@ -63,6 +74,7 @@ const App = () => {
         data: response,
         generalData: response,
         isSearchActive: false,
+        showCountryInfo: false,
       });
     } catch (err) {
       setIsLoading(false);
@@ -76,6 +88,8 @@ const App = () => {
       data: obj.data,
       generalData: obj.generalData,
       isSearchActive: obj.isSearchActive,
+      showCountryInfo: obj.showCountryInfo,
+      showCountryObjInfo: obj.showCountryObjInfo,
     });
   };
 
@@ -84,6 +98,8 @@ const App = () => {
     data: dataStateObj.data,
     error: dataStateObj.error,
     isSearchActive: dataStateObj.isSearchActive,
+    showCountryInfo: dataStateObj.showCountryInfo,
+    showCountryObjInfo: dataStateObj.showCountryObjInfo,
     setFunc: searchHandler,
   };
 
@@ -95,10 +111,14 @@ const App = () => {
     <DataContext.Provider value={dataObj}>
       <div className="country_container">
         <Header />
-        {!isLoading && !dataStateObj.error && <SearchCountry />}
+        {!isLoading && !dataStateObj.error && !dataStateObj.showCountryInfo && (
+          <SearchCountry />
+        )}
         {isLoading && <Loading />}
-        {!isLoading && !dataStateObj.error && <CountryList />}
-        {/* {!error && <CountryDetail />} */}
+        {!isLoading && !dataStateObj.error && !dataStateObj.showCountryInfo && (
+          <CountryList />
+        )}
+        {!dataStateObj.error && dataStateObj.showCountryInfo && <CountryDetail />}
         {dataStateObj.error && <Error />}
       </div>
     </DataContext.Provider>

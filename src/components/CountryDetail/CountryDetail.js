@@ -1,6 +1,7 @@
+import { useContext } from "react";
+import DataContext from "../../context/data-context";
 import CountryMainDetail from "./CountryMainDetail";
 import "./CountryDetail.css";
-import image from "../../assets/image-confetti.jpg";
 import CountryOtherDetail from "./CountryOtherDetail";
 import CountryBorder from "./CountryBorder";
 
@@ -35,6 +36,9 @@ const ArrowLeft = () => {
 };
 
 const CountryDetail = () => {
+  const dataCtx = useContext(DataContext);
+  const countryDetail = dataCtx.showCountryObjInfo;
+
   return (
     <section className="country__detail">
       <button className="back_btn">
@@ -44,14 +48,14 @@ const CountryDetail = () => {
 
       <div className="country_card_box">
         <figure className="country_detail_pic_box">
-          <img src={image} alt="" />
+          <img src={countryDetail.flags.png} alt="" />
         </figure>
 
         <section className="country_detail_box">
-        <h1 className="country_detail_header">Belgium</h1>
-          <CountryMainDetail />
-          <CountryOtherDetail />
-          <CountryBorder />
+          <h1 className="country_detail_header">{countryDetail.name.common}</h1>
+          <CountryMainDetail countryDetail={countryDetail} />
+          <CountryOtherDetail countryDetail={countryDetail} />
+          <CountryBorder countryBorderDetail={countryDetail.borders} generalData={dataCtx.generalData}/>
         </section>
       </div>
     </section>
