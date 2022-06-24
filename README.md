@@ -13,7 +13,7 @@
 
 Users should be able to:
 
-- View vital information about country
+- View vital information about countries
 
 ### Links
 
