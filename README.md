@@ -1,6 +1,5 @@
 # Country View
 
-
 ## Table of contents
 
 - [Country View](#country-view)
@@ -14,11 +13,11 @@
 
 Users should be able to:
 
-- View vital information about country 
+- View vital information about country
 
 ### Links
 
-- Live Site URL: [Add live site URL here]()
+- Live Site URL: [click here](https://daalu-country-view.netlify.app/)
 
 ### Built with
 
