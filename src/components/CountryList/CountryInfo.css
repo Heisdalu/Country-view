@@ -19,7 +19,6 @@
 }
 
 .country__sub_article {
-  /* padding: 0 2rem 2rem 1rem; */
   padding: 0.5rem 1.5rem 2rem 1.5rem;
   background-color: var(--header-background);
   overflow: hidden;
@@ -43,7 +42,6 @@
 .country__capital {
   display: flex;
   align-items: center;
-  /* padding: 0 1rem; */
   font-size: 15px;
   margin-bottom: 0.5rem;
 }

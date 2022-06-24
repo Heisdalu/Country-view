@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useRef } from "react";
 import DataContext from "../../context/data-context";
 import { FormatNumber } from "../../utils";
 import "./CountryInfo.css";

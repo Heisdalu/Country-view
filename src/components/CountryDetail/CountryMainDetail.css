@@ -21,7 +21,6 @@
   margin-top: 2px;
   font-size: 1rem;
   margin-left: 5px;
-  /* color:rgba(255, 255, 255, 0.818); */
   color: var(--detail-text);
   transition: color 1s;
 }
