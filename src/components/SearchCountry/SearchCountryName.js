@@ -1,45 +1,22 @@
-import { useContext, useEffect, useState } from "react";
-import DataContext from "../../context/data-context";
+import { useContext} from "react";
+import SearchContext from "../../context/search-context";
 import "./SearchCountryName.css";
 
 const SearchCountryName = () => {
-  const dataCtx = useContext(DataContext);
-  const [inputVal, setInputVal] = useState("");
-
+  const searchCtx = useContext(SearchContext);
+  
+  let debounceInput;
   const InputHandler = (e) => {
-    setInputVal(e.target.value);
+    
+    clearTimeout(debounceInput)
+    debounceInput = setTimeout(() => {
+      searchCtx.setFunc({
+        type: 'SEARCH_NAME',
+        name: e.target.value
+      })
+
+    },500)
   };
-
-  useEffect(() => {
-    const countryName = inputVal.trim();
-    let timer;
-    if (countryName) {
-      timer = setTimeout(() => {
-        const filterCountry = dataCtx.generalData.filter((el) =>
-          el.name.common
-            .toLocaleLowerCase()
-            .startsWith(countryName.toLocaleLowerCase())
-        );
-        dataCtx.setFunc({
-          type: "DATA_IS_PRESENT",
-          data: filterCountry,
-          generalData: dataCtx.generalData,
-          isSearchActive: true,
-        });
-      }, 1000);
-    }
-
-    if (countryName === "" && dataCtx.isSearchActive) {
-      dataCtx.setFunc({
-        type: "DATA_IS_PRESENT",
-        generalData: dataCtx.generalData,
-        data: dataCtx.generalData,
-        isSearchActive: false,
-      });
-    }
-    return () => clearTimeout(timer);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [inputVal]);
 
   return (
     <section className="searchCountryName">
@@ -64,7 +41,6 @@ const SearchCountryName = () => {
         className="search__input"
         placeholder="Search for a country..."
         onChange={InputHandler}
-        value={inputVal}
       />
     </section>
   );
