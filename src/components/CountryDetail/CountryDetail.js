@@ -44,7 +44,6 @@ const CountryDetail = () => {
       type: "DATA_IS_PRESENT",
       data: dataCtx.generalData,
       generalData: dataCtx.generalData,
-      isSearchActive: false,
       showCountryInfo: false,
       showCountryObjInfo: []
     });
