@@ -9,7 +9,7 @@ const Error = () => {
         <div className='error-image'>
           <img src={lol} alt="lol" />
         </div>
-        <p className='error_text'>Oops... we can't find what you are looking for</p>
+        <p className='error_text'>Oops... we can't find what you are looking for.</p>
 
       </div>
     );

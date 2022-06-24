@@ -47,11 +47,7 @@ const dataReducer = (state, action) => {
     };
   }
   if (action.type === "INITIAL_LOAD") {
-    // const generalData = action.isSearchActive
-    //   ? action.data
-    //   : action.generalData;
     const isintersectLoading = action.mainData.length === 0 ? true : false;
-    // const mainData = action.isSearchActive ? action.data : action.mainData;
 
     return {
       generalData: action.data,
@@ -84,7 +80,6 @@ const CountryList = (props) => {
       generalData: dataCtx.generalData,
       mainData: result.slice(0, 20),
       presentCount: 20,
-      isSearchActive: dataCtx.isSearchActive,
       data: dataCtx.data,
     });
 
@@ -98,7 +93,6 @@ const CountryList = (props) => {
         dispatchDataAction({
           type: "ADD_CONTENT",
           presentLimit: 20,
-          isSearchActive: dataCtx.isSearchActive,
           data: dataCtx.data,
         });
       }, 1000);
@@ -135,6 +129,7 @@ const CountryList = (props) => {
       {error && (
         <div className="countryList_error">
           <Error />
+          <p className="try_again">Search again...</p>
         </div>
       )}
     </>

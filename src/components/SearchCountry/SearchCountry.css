@@ -6,6 +6,6 @@
     .search__country {
         display: flex;
         align-items: center;
-        padding: 2rem;
+        padding: 2rem 3rem;
     }
 }

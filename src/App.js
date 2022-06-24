@@ -22,7 +22,6 @@ const objReducer = (state, action) => {
       generalData: [],
       data: state.data,
       error: true,
-      isSearchActive: false,
       showCountryInfo: false,
       setFunc: () => {},
     };
@@ -33,7 +32,6 @@ const objReducer = (state, action) => {
       generalData: action.generalData,
       data: action.data,
       error: false,
-      isSearchActive: action.isSearchActive,
       setFunc: () => {},
       showCountryInfo: false,
     };
@@ -73,7 +71,6 @@ const App = () => {
         type: "DATA_IS_PRESENT",
         data: response,
         generalData: response,
-        isSearchActive: false,
         showCountryInfo: false,
       });
     } catch (err) {
@@ -87,7 +84,6 @@ const App = () => {
       type: obj.type,
       data: obj.data,
       generalData: obj.generalData,
-      isSearchActive: obj.isSearchActive,
       showCountryInfo: obj.showCountryInfo,
       showCountryObjInfo: obj.showCountryObjInfo,
     });
@@ -97,7 +93,6 @@ const App = () => {
     generalData: dataStateObj.generalData,
     data: dataStateObj.data,
     error: dataStateObj.error,
-    isSearchActive: dataStateObj.isSearchActive,
     showCountryInfo: dataStateObj.showCountryInfo,
     showCountryObjInfo: dataStateObj.showCountryObjInfo,
     setFunc: searchHandler,
@@ -105,6 +100,7 @@ const App = () => {
 
   useEffect(() => {
     getData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
