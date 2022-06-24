@@ -102,7 +102,7 @@ const CountryList = (props) => {
   const obj = {
     root: null,
     rootMargin: "0px",
-    threshold: 1,
+    threshold: 0.6,
   };
   const elemObserve = new IntersectionObserver(objFunc, obj);
 
