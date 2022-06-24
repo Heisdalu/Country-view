@@ -8,7 +8,11 @@ const Header = () => {
   };
   return (
     <header className="header">
-      <h1 className="header__title">Where in the world?</h1>
+      <h1 className="header__title">
+        <a href="https://daalu-country-view.netlify.app/">
+          Where in the world?
+        </a>
+      </h1>
 
       <nav className="switch-mode" onClick={switchModeHandler}>
         <ModeIcon />

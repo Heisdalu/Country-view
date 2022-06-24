@@ -12,6 +12,13 @@
     font-size: 1.2rem;
 }
 
+.header__title a {
+    background: none;
+    color: var(--header-text);
+    text-decoration: none;
+    transition: color 1s;
+}
+
 .switch-mode{
     display: flex;
     align-items: center;

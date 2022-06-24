@@ -7,6 +7,12 @@ const getNativeName = (data) => {
   return countryNativeName.common
 }
 
+const countryCapital = (data) => {
+  if (!data) return "";
+  if (data.length > 1) return data.join(", ");
+  return data;
+};
+
 const CountryMainDetail = (props) => {
   const countryDetail = props.countryDetail;
 
@@ -30,7 +36,7 @@ const CountryMainDetail = (props) => {
       </div>
       <div className="country_main_box">
         <h2 className="country_detail_type">Capital: </h2>
-        <span>{countryDetail.capital}</span>
+        <span>{countryCapital(countryDetail.capital)}</span>
       </div>
     </section>
   );

@@ -3,21 +3,28 @@ import DataContext from "../../context/data-context";
 import { FormatNumber } from "../../utils";
 import "./CountryInfo.css";
 
+
 const CountryInfo = (props) => {
   const countryData = props.data;
   const dataCtx = useContext(DataContext);
   const countryRef = useRef("");
-
+  
   const showInfoHandler = (e) => {
     const countryName = countryData.name.common.toLowerCase();
     const findCountryInfo = dataCtx.generalData.find(
       (el) => el.name.common.toLowerCase() === countryName
-    );
+      );
 
     dataCtx.setFunc({ type: "DISPLAY_COUNTRY_INFO", showCountryInfo: true, showCountryObjInfo: findCountryInfo});
+
   };
 
-  useEffect(() => {});
+  const countryCapital = (data) => {
+    if(!data) return '';
+    if(data.length > 1) return data.join(', ')
+    return data
+  }
+  
 
   return (
     <article
@@ -48,7 +55,9 @@ const CountryInfo = (props) => {
         </section>
         <section className="country__capital">
           <h3 className="country_capital__header">Capital: </h3>
-          <span className="country_capital__name">{countryData?.capital}</span>
+          <span className="country_capital__name">
+            {countryCapital(countryData.capital)}
+          </span>
         </section>
       </section>
     </article>
