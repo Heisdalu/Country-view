@@ -26,3 +26,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@media screen and (min-width: 1900px) {
+  body {
+    max-width: 1800px;
+    margin:  0 auto;
+  }
+}
